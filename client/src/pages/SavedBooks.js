@@ -11,7 +11,10 @@ import { QUERY_ME } from '../utils/queries';
 const SavedBooks = () => {
   const [userData, setUserData] = useState({});
 
-  const { loading, data } = useQuery(QUERY_ME);
+  // use this to determine if `useEffect()` hook needs to run again
+  const userDataLength = Object.keys(userData).length;
+
+  const { loading, data, refetch } = useQuery(QUERY_ME);
   const user = data?.me;
 
   useEffect(() => {
@@ -23,14 +26,14 @@ const SavedBooks = () => {
           return false;
         }
 
-        setUserData(user);
+        setUserData(refetch());
       } catch (err) {
         console.error(err);
       }
     };
 
     getUserData();
-  }, [userData]);
+  }, [userDataLength]);
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
