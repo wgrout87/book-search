@@ -41,7 +41,6 @@ const SearchBooks = () => {
       }
 
       const { items } = await response.json();
-      console.log(items);
 
       const bookData = items.map((book) => ({
         bookId: book.id,
