@@ -19,7 +19,7 @@ const SavedBooks = () => {
 
   const { loading, data, refetch } = useQuery(QUERY_ME);
   const user = data?.me;
-  const [deleteBook, { error }] = useMutation(DELETE_BOOK);
+  const [deleteBook] = useMutation(DELETE_BOOK);
 
   useEffect(() => {
     const getUserData = async () => {
