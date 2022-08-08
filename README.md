@@ -13,7 +13,8 @@ The original code can be found in the following repository:
 ## Links
 
 [Code repository](https://github.com/wgrout87/book-search)
-[Deployed website](https://wgrout87.github.io/book-search/)
+
+[Deployed website](https://evening-river-75441.herokuapp.com/)
 
 ## Table of Contents
 
